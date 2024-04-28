@@ -18,7 +18,8 @@ function navigateToPage(page) {
     // Update the URL with the page parameter
     window.history.pushState({}, routeBaseUrl, `/${page}`);
     // Load the page content
-    loadPage(page);
+    var pageUrl = isProduction ? `${routeBaseUrl}/${page}` : page;
+    loadPage(pageUrl);
 }
 
 // Function to load HTML file based on URL parameter
