@@ -26,14 +26,12 @@ function loadPageFromURL() {
     // Get the URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     console.log('initialURL-initialURL',initialURL);
-    const page = urlParams.get('page');
-    console.log('page-page', page);
     console.log('routeBaseUrl',routeBaseUrl);
-    window.history.pushState({}, routeBaseUrl, `/${page}`);
-    if (page) {
-        // Load the specified HTML file
-        loadPage(page);
-    }
+    window.history.pushState({}, routeBaseUrl);
+    // if (page) {
+    //     // Load the specified HTML file
+    //     loadPage(page);
+    // }
 }
 
 // Call the function when the page loads
