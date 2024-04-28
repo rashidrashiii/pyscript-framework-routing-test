@@ -5,7 +5,7 @@ var routeBaseUrl = isProduction ? initialURL : '';
 // Function to load HTML file based on URL parameter
 function loadPage(page) {
     // Load the specified HTML file
-    fetch(`components/${page}.html`) // Assuming components folder is in the same directory as index.html
+    fetch(`${page}.html`) // Assuming components folder is in the same directory as index.html
         .then(response => response.text())
         .then(html => {
             document.getElementById('content').innerHTML = html;
@@ -18,7 +18,7 @@ function navigateToPage(page) {
     // Update the URL with the page parameter
     window.history.pushState({}, routeBaseUrl, `/${page}`);
     // Load the page content
-    var pageUrl = isProduction ? `${routeBaseUrl}/${page}` : page;
+    var pageUrl = isProduction ? `${routeBaseUrl}/components/${page}` : `components/${page}`;
     loadPage(pageUrl);
 }
 
