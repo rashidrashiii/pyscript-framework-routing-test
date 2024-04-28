@@ -1,4 +1,5 @@
 var isProduction = true;
+var routeBaseUrl = isProduction ? initialURL : '';
 
 // Function to load HTML file based on URL parameter
 function loadPage(page) {
@@ -14,7 +15,7 @@ function loadPage(page) {
 // Function to navigate to a specific page when button is clicked
 function navigateToPage(page) {
     // Update the URL with the page parameter
-    window.history.pushState({}, '', `/${page}`);
+    window.history.pushState({}, routeBaseUrl, `/${page}`);
     // Load the page content
     loadPage(page);
 }
@@ -27,7 +28,6 @@ function loadPageFromURL() {
     console.log('initialURL-initialURL',initialURL);
     const page = urlParams.get('page');
     console.log('page-page', page);
-    var routeBaseUrl = isProduction ? initialURL : '';
     console.log('routeBaseUrl',routeBaseUrl);
     window.history.pushState({}, routeBaseUrl, `/${page}`);
     if (page) {
