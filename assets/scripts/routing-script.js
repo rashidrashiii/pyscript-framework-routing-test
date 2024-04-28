@@ -21,6 +21,7 @@ function navigateToPage(page) {
 function loadPageFromURL() {
     // Get the URL parameter
     const urlParams = new URLSearchParams(window.location.search);
+    console.log('urlParams-urlParams',urlParams)
     const page = urlParams.get('page');
     console.log('page-page', page);
     if (page) {
