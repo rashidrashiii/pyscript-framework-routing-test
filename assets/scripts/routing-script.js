@@ -18,7 +18,7 @@ function navigateToPage(page) {
     // Update the URL with the page parameter
     window.history.pushState({}, routeBaseUrl, `/${page}`);
     // Load the page content
-    var pageUrl = isProduction ? `${routeBaseUrl}/components/${page}` : `components/${page}`;
+    var pageUrl = isProduction ? `${routeBaseUrl}components/${page}` : `components/${page}`;
     loadPage(pageUrl);
 }
 
