@@ -28,6 +28,7 @@ function loadPageFromURL() {
     const page = urlParams.get('page');
     console.log('page-page', page);
     var routeBaseUrl = isProduction ? initialURL : '';
+    console.log('routeBaseUrl',routeBaseUrl);
     window.history.pushState({}, routeBaseUrl, `/${page}`);
     if (page) {
         // Load the specified HTML file
