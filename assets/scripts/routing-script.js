@@ -1,4 +1,5 @@
 var isProduction = true;
+const initialURL = window.location.href;
 var routeBaseUrl = isProduction ? initialURL : '';
 
 // Function to load HTML file based on URL parameter
@@ -24,7 +25,6 @@ function navigateToPage(page) {
 function loadPageFromURL() {
     // Get the URL parameter
     const urlParams = new URLSearchParams(window.location.search);
-    const initialURL = window.location.href;
     console.log('initialURL-initialURL',initialURL);
     const page = urlParams.get('page');
     console.log('page-page', page);
